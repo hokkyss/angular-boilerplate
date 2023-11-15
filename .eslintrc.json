@@ -1,0 +1,54 @@
+{
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "alloy",
+        "alloy/typescript",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended"
+      ],
+      "files": ["*.ts"],
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "prefix": "app",
+            "style": "kebab-case",
+            "type": "element"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "prefix": "app",
+            "style": "camelCase",
+            "type": "attribute"
+          }
+        ],
+        "no-console": "error"
+      }
+    },
+    {
+      "extends": [
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:@angular-eslint/template/accessibility",
+        "plugin:prettier/recommended"
+      ],
+      "files": ["*.html"],
+      "rules": {}
+    },
+    {
+      "extends": ["plugin:jsonc/recommended-with-jsonc", "plugin:jsonc/prettier"],
+      "files": ["*.json"],
+      "rules": {
+        "jsonc/comma-style": "error",
+        "jsonc/sort-keys": "error"
+      }
+    }
+  ],
+  "root": true
+}

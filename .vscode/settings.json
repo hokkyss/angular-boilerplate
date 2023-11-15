@@ -1,1 +1,19 @@
-{}
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true,
+    "source.fixAll": true
+  },
+  "eslint.options": {
+    "extensions": [".ts", ".html", ".json"]
+  },
+  "eslint.validate": ["typescript", "typescriptreact", "html", "json", "jsonc", "json5"],
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

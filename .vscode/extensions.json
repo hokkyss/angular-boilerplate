@@ -8,5 +8,6 @@
     "esbenp.prettier-vscode",
     "wayou.vscode-todo-highlight",
     "esbenp.prettier-vscode"
-  ]
+  ],
+  "unwantedRecommendations": ["nrwl.angular-console"]
 }
