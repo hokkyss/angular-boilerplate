@@ -8,11 +8,5 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "import": "./src/public-api.ts",
-      "types": "./src/public-api.ts"
-    }
-  }
+  "sideEffects": false
 }
