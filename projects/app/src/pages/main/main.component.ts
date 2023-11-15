@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
-import HighlightDirective from '../../../../directives/src/lib/highlight.directive';
-import PowerPipe from '../../../../pipes/src/lib/power.pipe';
+import { MatButtonModule } from '@angular/material/button';
+import { HighlightDirective } from 'directives';
+import { PowerPipe } from 'pipes';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrl: './main.component.css',
-  imports: [PowerPipe, HighlightDirective],
+  imports: [PowerPipe, HighlightDirective, MatButtonModule],
   standalone: true,
 })
 export default class MainComponent {
