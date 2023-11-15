@@ -3,6 +3,24 @@
   "overrides": [
     {
       "extends": [
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:@angular-eslint/template/accessibility",
+        "plugin:prettier/recommended"
+      ],
+      "files": ["*.html"],
+      "rules": {}
+    },
+    {
+      "excludedFiles": ["projects/**/package.json"],
+      "extends": ["plugin:jsonc/recommended-with-jsonc", "plugin:jsonc/prettier"],
+      "files": ["*.json"],
+      "rules": {
+        "jsonc/comma-style": "error",
+        "jsonc/sort-keys": "error"
+      }
+    },
+    {
+      "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "alloy",
@@ -13,45 +31,7 @@
       ],
       "files": ["*.ts"],
       "rules": {
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "prefix": "app",
-            "style": "kebab-case",
-            "type": "element"
-          }
-        ],
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "prefix": "app",
-            "style": "camelCase",
-            "type": "attribute"
-          }
-        ],
-        "no-console": [
-          "error",
-          {
-            "allow": ["warn", "error"]
-          }
-        ]
-      }
-    },
-    {
-      "extends": [
-        "plugin:@angular-eslint/template/recommended",
-        "plugin:@angular-eslint/template/accessibility",
-        "plugin:prettier/recommended"
-      ],
-      "files": ["*.html"],
-      "rules": {}
-    },
-    {
-      "extends": ["plugin:jsonc/recommended-with-jsonc", "plugin:jsonc/prettier"],
-      "files": ["*.json"],
-      "rules": {
-        "jsonc/comma-style": "error",
-        "jsonc/sort-keys": "error"
+        "no-console": "error"
       }
     }
   ],

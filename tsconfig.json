@@ -22,6 +22,13 @@
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "common": ["./dist/common", "./projects/common/src/public-api.ts"],
+      "directives": ["./dist/directives", "./projects/directives/src/public-api.ts"],
+      "interceptors": ["./dist/interceptors", "./projects/interceptors/src/public-api.ts"],
+      "pipes": ["./dist/pipes", "./projects/pipes/src/public-api.ts"],
+      "utils": ["./dist/utils", "./projects/utils/src/public-api.ts"]
+    },
     "sourceMap": true,
     "strict": true,
     "target": "ES2022",

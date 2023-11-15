@@ -52,6 +52,7 @@ function run(): void {
   // Start up the Node server
   const server = app();
   server.listen(port, () => {
+    // NOTE: this is to inform server address
     // eslint-disable-next-line no-console
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
