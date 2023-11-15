@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, type Route } from '@angular/router';
 import MainComponent from './main.component';
 
-const mainRoute: Route = {
+export const mainRoute: Route = {
   path: '',
   component: MainComponent,
 };
