@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "3204748f-b0d8-49e0-891a-49ede1059500",
+    "analytics": false,
     "schematicCollections": ["@angular-eslint/schematics"]
   },
   "newProjectRoot": "projects",
@@ -34,31 +34,25 @@
           },
           "defaultConfiguration": "production",
           "options": {
-            "assets": ["src/favicon.ico", "src/assets"],
-            "browser": "src/main.ts",
-            "index": "src/index.html",
+            "assets": ["projects/app/src/favicon.ico", "projects/app/src/assets"],
+            "browser": "projects/app/src/main.ts",
+            "index": "projects/app/src/index.html",
             "outputPath": "dist/app",
             "polyfills": ["zone.js"],
             "prerender": true,
             "scripts": [],
-            "server": "src/main.server.ts",
+            "server": "projects/app/src/main.server.ts",
             "ssr": {
-              "entry": "server.ts"
+              "entry": "projects/app/server.ts"
             },
-            "styles": ["src/styles.css"],
-            "tsConfig": "tsconfig.app.json"
+            "styles": ["projects/app/src/styles.css"],
+            "tsConfig": "projects/app/tsconfig.app.json"
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "buildTarget": "app:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         },
         "serve": {
@@ -76,19 +70,29 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["projects/app/src/favicon.ico", "projects/app/src/assets"],
             "polyfills": ["zone.js", "zone.js/testing"],
             "scripts": [],
-            "styles": ["src/styles.css"],
-            "tsConfig": "tsconfig.spec.json"
+            "styles": ["projects/app/src/styles.css"],
+            "tsConfig": "projects/app/tsconfig.spec.json"
           }
         }
       },
       "prefix": "app",
       "projectType": "application",
-      "root": "",
-      "schematics": {},
-      "sourceRoot": "src"
+      "root": "projects/app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
+      "sourceRoot": "projects/app/src"
     }
   },
   "version": 1
