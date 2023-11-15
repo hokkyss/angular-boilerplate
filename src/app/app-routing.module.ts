@@ -1,10 +1,5 @@
 import { NgModule } from '@angular/core';
-import {
-  RouterLink,
-  RouterModule,
-  RouterOutlet,
-  Routes,
-} from '@angular/router';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import routes from '../configs/router/router.config';
 
 @NgModule({

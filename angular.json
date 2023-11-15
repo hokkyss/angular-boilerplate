@@ -87,9 +87,7 @@
       "prefix": "app",
       "projectType": "application",
       "root": "",
-      "schematics": {
-        "schematicCollections": ["@angular-eslint/schematics"]
-      },
+      "schematics": {},
       "sourceRoot": "src"
     }
   },
