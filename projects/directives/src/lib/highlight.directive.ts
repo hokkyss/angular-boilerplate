@@ -5,7 +5,7 @@
 import { Directive, ElementRef, HostListener, Inject, Input } from '@angular/core';
 
 /**
- * yes
+ * Highlights the component on hover
  */
 @Directive({
   standalone: true,
