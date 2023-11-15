@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "Angular.ng-template",
+    "dbaeumer.vscode-eslint",
+    "ambar.bundle-size",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "ms-vscode.vscode-typescript-next",
+    "esbenp.prettier-vscode",
+    "wayou.vscode-todo-highlight",
+    "esbenp.prettier-vscode"
+  ]
+}
