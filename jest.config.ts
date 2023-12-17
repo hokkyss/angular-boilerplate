@@ -1,5 +1,8 @@
 import { getJestProjects } from '@nx/jest';
+import { Config } from 'jest';
 
-export default {
+const rootJestConfig: Config = {
   projects: getJestProjects(),
 };
+
+export default rootJestConfig;

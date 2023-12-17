@@ -1,11 +1,5 @@
 {
-  "name": "@angular-boilerplate/source",
-  "version": "1.0.0",
-  "repository": "https://github.com/hokkyss/angular-boilerplate",
   "author": "<hokkyss2@gmail.com>",
-  "license": "MIT",
-  "private": true,
-  "packageManager": "yarn@4.0.2",
   "dependencies": {
     "@angular/animations": "~17.0.0",
     "@angular/common": "~17.0.0",
@@ -63,5 +57,11 @@
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.2.2"
-  }
+  },
+  "license": "MIT",
+  "name": "@angular-boilerplate/source",
+  "packageManager": "yarn@4.0.2",
+  "private": true,
+  "repository": "https://github.com/hokkyss/angular-boilerplate",
+  "version": "1.0.0"
 }

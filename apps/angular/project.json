@@ -1,64 +1,52 @@
 {
-  "name": "angular",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
+  "name": "angular",
   "prefix": "angular",
+  "projectType": "application",
   "sourceRoot": "apps/angular/src",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/apps/angular",
-        "index": "apps/angular/src/index.html",
-        "browser": "apps/angular/src/main.ts",
-        "polyfills": ["zone.js"],
-        "tsConfig": "apps/angular/tsconfig.app.json",
-        "assets": ["apps/angular/src/favicon.ico", "apps/angular/src/assets"],
-        "styles": ["apps/angular/src/styles.css"],
-        "scripts": [],
-        "server": "apps/angular/src/main.server.ts",
-        "prerender": true,
-        "ssr": {
-          "entry": "apps/angular/server.ts"
-        }
-      },
       "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true
+        },
         "production": {
           "budgets": [
             {
-              "type": "initial",
+              "maximumError": "1mb",
               "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "type": "initial"
             },
             {
-              "type": "anyComponentStyle",
+              "maximumError": "4kb",
               "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "type": "anyComponentStyle"
             }
           ],
           "outputHashing": "all"
-        },
-        "development": {
-          "optimization": false,
-          "extractLicenses": false,
-          "sourceMap": true
         }
       },
-      "defaultConfiguration": "production"
-    },
-    "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
-      "configurations": {
-        "production": {
-          "buildTarget": "angular:build:production"
+      "defaultConfiguration": "production",
+      "executor": "@angular-devkit/build-angular:application",
+      "options": {
+        "assets": ["apps/angular/src/favicon.ico", "apps/angular/src/assets"],
+        "browser": "apps/angular/src/main.ts",
+        "index": "apps/angular/src/index.html",
+        "outputPath": "dist/apps/angular",
+        "polyfills": ["zone.js"],
+        "prerender": true,
+        "scripts": [],
+        "server": "apps/angular/src/main.server.ts",
+        "ssr": {
+          "entry": "apps/angular/server.ts"
         },
-        "development": {
-          "buildTarget": "angular:build:development"
-        }
+        "styles": ["apps/angular/src/styles.css"],
+        "tsConfig": "apps/angular/tsconfig.app.json"
       },
-      "defaultConfiguration": "development"
+      "outputs": ["{options.outputPath}"]
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -70,12 +58,24 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]
     },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "angular:build:development"
+        },
+        "production": {
+          "buildTarget": "angular:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@angular-devkit/build-angular:dev-server"
+    },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/angular/jest.config.ts"
-      }
+      },
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }
   }
 }

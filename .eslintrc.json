@@ -1,11 +1,31 @@
 {
-  "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx", "prettier"],
   "overrides": [
     {
+      "extends": [
+        "plugin:jsonc/recommended-with-json",
+        "plugin:jsonc/prettier"
+      ],
       "files": ["**/*.json"],
-      "extends": ["plugin:jsonc/recommended-with-jsonc"]
+      "rules": {
+        "jsonc/comma-style": "error",
+        "jsonc/no-comments": "off",
+        "jsonc/sort-keys": "error"
+      }
+    },
+    {
+      "files": ["package.json"],
+      "rules": {
+        "jsonc/sort-keys": [
+          "error",
+          {
+            "order": {
+              "type": "asc"
+            },
+            "pathPattern": "^$" // Hits the root properties
+          }
+        ]
+      }
     },
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -13,42 +33,50 @@
         "@nx/enforce-module-boundaries": [
           "error",
           {
-            "enforceBuildableLibDependency": true,
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "onlyDependOnLibsWithTags": ["*"],
+                "sourceTag": "*"
               }
-            ]
+            ],
+            "enforceBuildableLibDependency": true
           }
-        ]
+        ],
+        "no-console": "error",
+        "object-shorthand": "error"
       }
     },
     {
-      "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript"],
-      "rules": {}
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/consistent-type-exports": "error",
+        "@typescript-eslint/no-empty-interface": "off"
+      }
     },
     {
-      "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nx/javascript"],
+      "files": ["*.js", "*.jsx"],
       "rules": {}
     },
     {
-      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
       "env": {
         "jest": true
       },
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
       "rules": {}
     },
     {
+      "extends": ["prettier"],
       "files": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.json"],
-      "extends": ["plugin:prettier/recommended"],
+      "plugins": ["prettier"],
       "rules": {
-        "prettier/prettier": "error",
-        "no-console": "error"
+        "prettier/prettier": "error"
       }
     }
-  ]
+  ],
+  "plugins": ["@nx"],
+  "root": true
 }
