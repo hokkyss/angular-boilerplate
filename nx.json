@@ -61,8 +61,7 @@
       "linter": "eslint",
       "unitTestRunner": "jest",
       "setParserOptionsProject": true,
-      "lazy": true,
-      "skipTsConfig": false,
+      "skipTsConfig": true,
       "inlineStyle": false,
       "inlineTemplate": false
     },
