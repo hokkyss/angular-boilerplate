@@ -58,11 +58,37 @@
     "@nx/angular:library": {
       "linter": "eslint",
       "unitTestRunner": "jest",
-      "setParserOptionsProject": true
+      "setParserOptionsProject": true,
+      "lazy": true,
+      "skipTsConfig": false
     },
     "@nx/angular:component": {
       "style": "css",
       "setParserOptionsProject": true
+    },
+    "@nx/angular:ng-add": {
+      "e2eTestRunner": "playwright",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:ngrx": {
+      "facade": true
+    },
+    "@nx/angular:ngrx-feature-store": {
+      "facade": true
+    },
+    "@nx/angular:ngrx-root-store": {
+      "facade": true,
+      "addDevTools": true
+    },
+    "@nx/angular:scam": {
+      "inlineScam": false
+    },
+    "@nx/angular:scam-directive": {
+      "inlineScam": false
+    },
+    "@nx/angular:scam-pipe": {
+      "inlineScam": false
     }
   }
 }
