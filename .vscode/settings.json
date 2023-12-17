@@ -1,19 +1,21 @@
 {
+  "eslint.validate": [
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "json5"
+  ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.organizeImports": true,
-    "source.fixAll": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
-  "eslint.options": {
-    "extensions": [".ts", ".html", ".json"]
-  },
-  "eslint.validate": ["typescript", "typescriptreact", "html", "json", "jsonc", "json5"],
-  "editor.tabSize": 2,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "search.exclude": {
+    "**/.yarn": true
   }
 }

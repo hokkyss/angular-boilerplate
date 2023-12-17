@@ -1,39 +1,54 @@
 {
-  "ignorePatterns": ["projects/**/*", "dist/**"],
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx", "prettier"],
   "overrides": [
     {
-      "extends": [
-        "plugin:@angular-eslint/template/recommended",
-        "plugin:@angular-eslint/template/accessibility",
-        "plugin:prettier/recommended"
-      ],
-      "files": ["*.html"],
+      "files": ["**/*.json"],
+      "extends": ["plugin:jsonc/recommended-with-jsonc"]
+    },
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
       "rules": {}
     },
     {
-      "excludedFiles": ["projects/**/package.json"],
-      "extends": ["plugin:jsonc/recommended-with-jsonc", "plugin:jsonc/prettier"],
-      "files": ["*.json"],
-      "rules": {
-        "jsonc/comma-style": "error",
-        "jsonc/sort-keys": "error"
-      }
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
     },
     {
-      "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "alloy",
-        "alloy/typescript",
-        "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates",
-        "plugin:prettier/recommended"
-      ],
-      "files": ["*.ts"],
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {}
+    },
+    {
+      "files": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.json"],
+      "extends": ["plugin:prettier/recommended"],
       "rules": {
+        "prettier/prettier": "error",
         "no-console": "error"
       }
     }
-  ],
-  "root": true
+  ]
 }
