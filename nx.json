@@ -53,26 +53,29 @@
       "linter": "eslint",
       "unitTestRunner": "jest",
       "e2eTestRunner": "playwright",
-      "setParserOptionsProject": true
+      "setParserOptionsProject": true,
+      "inlineStyle": false,
+      "inlineTemplate": false
     },
     "@nx/angular:library": {
       "linter": "eslint",
       "unitTestRunner": "jest",
       "setParserOptionsProject": true,
       "lazy": true,
-      "skipTsConfig": false
+      "skipTsConfig": false,
+      "inlineStyle": false,
+      "inlineTemplate": false
     },
     "@nx/angular:component": {
       "style": "css",
-      "setParserOptionsProject": true
+      "setParserOptionsProject": true,
+      "inlineStyle": false,
+      "inlineTemplate": false
     },
     "@nx/angular:ng-add": {
       "e2eTestRunner": "playwright",
       "linter": "eslint",
       "unitTestRunner": "jest"
-    },
-    "@nx/angular:ngrx": {
-      "facade": true
     },
     "@nx/angular:ngrx-feature-store": {
       "facade": true
