@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
-    "strict": true
+    "strict": true,
+    "target": "es2022",
+    "useDefineForClassFields": false
   },
   "extends": "../../tsconfig.base.json",
   "files": [],
   "include": [],
   "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    },
     {
       "path": "./tsconfig.spec.json"
     }

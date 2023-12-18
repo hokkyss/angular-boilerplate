@@ -83,5 +83,9 @@
   "workspaces": [
     "apps/*",
     "libs/*"
-  ]
+  ],
+  "scripts": {
+    "lint": "nx run-many --target=lint --all",
+    "test": "nx run-many --target=test --all"
+  }
 }

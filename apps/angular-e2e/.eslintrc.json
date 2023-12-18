@@ -9,7 +9,7 @@
     {
       "files": ["*.ts", "*.tsx"],
       "parserOptions": {
-        "project": ["apps/angular/tsconfig.*?.json"]
+        "project": ["apps/angular-e2e/tsconfig.*?.json"]
       },
       "rules": {}
     },
