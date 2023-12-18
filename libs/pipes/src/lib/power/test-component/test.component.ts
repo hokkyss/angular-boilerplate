@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { HighlightDirective } from '../highlight.directive';
+import { PowerPipe } from '../power.pipe';
 
 @Component({
   standalone: true,
-  imports: [HighlightDirective],
-  selector: 'angular-boilerplate-highlight-directive-test',
+  imports: [PowerPipe],
+  selector: 'angular-boilerplate-power-pipe-test',
   templateUrl: './test.component.html',
   styleUrl: './test.component.css',
 })

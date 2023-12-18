@@ -1,1 +1,1 @@
-export * from './lib/power.pipe';
+export * from './lib/power/power.pipe';
