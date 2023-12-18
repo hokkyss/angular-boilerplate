@@ -1,1 +1,1 @@
-export * from './lib/highlight.directive';
+export * from './lib/highlight/highlight.directive';

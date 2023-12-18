@@ -11,7 +11,7 @@ import {
   standalone: true,
 })
 export class HighlightDirective {
-  @Input({ required: true }) public highlightColor = '';
+  @Input() public highlightColor = '';
   public readonly defaultHighlightColor = 'yellow';
 
   public constructor(@Inject(ElementRef) private el: ElementRef) {}

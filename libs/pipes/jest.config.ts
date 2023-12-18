@@ -1,5 +1,6 @@
-/* eslint-disable */
-export default {
+import { Config } from 'jest';
+
+const jestConfig: Config = {
   displayName: 'pipes',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
@@ -20,3 +21,5 @@ export default {
     'jest-preset-angular/build/serializers/html-comment',
   ],
 };
+
+export default jestConfig;

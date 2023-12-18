@@ -38,6 +38,10 @@
               {
                 "onlyDependOnLibsWithTags": ["*"],
                 "sourceTag": "*"
+              },
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
               }
             ],
             "enforceBuildableLibDependency": true
