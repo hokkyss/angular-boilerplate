@@ -29,6 +29,7 @@
     },
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "extends": ["alloy"],
       "rules": {
         "@nx/enforce-module-boundaries": [
           "error",
@@ -52,7 +53,7 @@
       }
     },
     {
-      "extends": ["plugin:@nx/typescript"],
+      "extends": ["plugin:@nx/typescript", "alloy/typescript"],
       "files": ["*.ts", "*.tsx"],
       "rules": {
         "@typescript-eslint/consistent-type-definitions": "off",
