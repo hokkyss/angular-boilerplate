@@ -2,6 +2,7 @@
   "main": "./index.js",
   "module": "./index.mjs",
   "name": "@angular-boilerplate/shared",
+  "peerDependencies": {},
   "types": "./index.d.ts",
   "typings": "./index.d.ts",
   "version": "0.0.1"

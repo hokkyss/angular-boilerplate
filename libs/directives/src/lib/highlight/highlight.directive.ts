@@ -12,12 +12,11 @@ import {
 })
 export class HighlightDirective {
   @Input() public highlightColor = '';
-  public readonly defaultHighlightColor = 'yellow';
 
   public constructor(@Inject(ElementRef) private el: ElementRef) {}
 
   @HostListener('mouseenter') public onMouseEnter() {
-    this.highlight(this.highlightColor || this.defaultHighlightColor);
+    this.highlight(this.highlightColor || 'yellow');
   }
 
   @HostListener('mouseleave') public onMouseLeave() {

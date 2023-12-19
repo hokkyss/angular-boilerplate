@@ -2,9 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
+  imports: [CommonModule],
   selector: 'angular-nx-welcome',
   standalone: true,
-  imports: [CommonModule],
+  styles: [],
   template: `
     <!--
      * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -959,7 +961,5 @@ nx affected:e2e</pre>
       </div>
     </div>
   `,
-  styles: [],
-  encapsulation: ViewEncapsulation.None,
 })
 export class NxWelcomeComponent {}

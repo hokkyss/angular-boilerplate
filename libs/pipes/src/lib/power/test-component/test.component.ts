@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+
 import { PowerPipe } from '../power.pipe';
 
 @Component({
-  standalone: true,
   imports: [PowerPipe],
   selector: 'angular-boilerplate-power-pipe-test',
-  templateUrl: './test.component.html',
+  standalone: true,
   styleUrl: './test.component.css',
+  templateUrl: './test.component.html',
 })
 export class TestComponent {}

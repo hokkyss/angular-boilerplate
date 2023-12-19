@@ -1,4 +1,5 @@
 import { fireEvent, render } from '@testing-library/angular';
+
 import { TestComponent } from './test-component/test.component';
 
 describe('HighlightDirective', () => {

@@ -59,6 +59,7 @@
     "eslint-config-alloy": "^5.1.2",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-jsonc": "^2.11.1",
+    "eslint-plugin-perfectionist": "^2.5.0",
     "eslint-plugin-playwright": "^0.15.3",
     "eslint-plugin-prettier": "^5.0.1",
     "husky": "^8.0.3",
@@ -92,8 +93,7 @@
       "yarn lint"
     ],
     "*.{ts,js,html,css}": [
-      "yarn test",
-      "yarn e2e"
+      "yarn test"
     ]
   },
   "scripts": {

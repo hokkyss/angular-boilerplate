@@ -29,7 +29,8 @@
     },
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "extends": ["alloy"],
+      "extends": ["alloy", "plugin:perfectionist/recommended-natural"],
+      "plugins": ["perfectionist"],
       "rules": {
         "@nx/enforce-module-boundaries": [
           "error",
@@ -46,6 +47,38 @@
               }
             ],
             "enforceBuildableLibDependency": true
+          }
+        ],
+        "perfectionist/sort-imports": [
+          "error",
+          {
+            "groups": [
+              "side-effect",
+              ["type", "builtin-type", "external-type"],
+              "internal-type",
+              "parent-type",
+              "sibling-type",
+              ["builtin", "external"],
+              "internal",
+              "parent",
+              "sibling",
+              "unknown"
+            ]
+          }
+        ],
+        "perfectionist/sort-classes": [
+          "error",
+          {
+            "groups": [
+              "index-signature",
+              "static-property",
+              "property",
+              "private-property",
+              "constructor",
+              "static-method",
+              "method",
+              "private-method"
+            ]
           }
         ],
         "no-console": "error",
