@@ -71,7 +71,6 @@
     },
     "@nx/angular:component": {
       "style": "css",
-      "setParserOptionsProject": true,
       "inlineStyle": false,
       "inlineTemplate": false
     },
