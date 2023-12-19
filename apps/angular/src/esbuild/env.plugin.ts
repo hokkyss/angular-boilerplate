@@ -3,32 +3,30 @@ import type { Plugin } from 'esbuild';
 import { resolve } from 'path';
 import { loadEnv } from 'vite';
 
+/**
+ * To identify NODE_ENV, several different values were checked.
+ *
+ * `minify`: `false` // this doesn't always exist
+ *
+ * `minifyIdentifiers`: `false`
+ *
+ * `minifySyntax`: `false`
+ *
+ * `minifyWhitespace`: `false`
+ *
+ * `sourcemap`: `true`
+ *
+ * `entryNames`: `[name]` instead of `[name]-[hash]`
+ *
+ * `assetNames`: `media/[name]` instead of `media/[name]-[hash]`
+ *
+ * `define.ngDevMode` does not exist (as opposed to `false`)
+ *
+ * @see {@link https://esbuild.github.io/plugins/#build-options ESBuild}
+ */
 const envPlugin: Plugin = {
   name: 'load-env',
   setup(build) {
-    /**
-     * To identify NODE_ENV, several different values were checked.
-     *
-     * `minify`: `false` // this doesn't always exist
-     *
-     * `minifyIdentifiers`: `false`
-     *
-     * `minifySyntax`: `false`
-     *
-     * `minifyWhitespace`: `false`
-     *
-     * `sourcemap`: `true`
-     *
-     * `entryNames`: `[name]` instead of `[name]-[hash]`
-     *
-     * `assetNames`: `media/[name]` instead of `media/[name]-[hash]`
-     *
-     * `define.ngDevMode` does not exist (as opposed to `false`)
-     *
-     * @see {@link https://esbuild.github.io/plugins/#build-options ESBuild}
-     */
-    const define = build.initialOptions.define ?? {};
-
     const isProdMode =
       build.initialOptions.minifyIdentifiers &&
       build.initialOptions.minifySyntax &&
@@ -43,10 +41,13 @@ const envPlugin: Plugin = {
       envPrefix,
     );
 
-    define['process.env'] = JSON.stringify({
-      ...env,
-      NODE_ENV: isProdMode ? 'production' : 'development',
-    });
+    build.initialOptions.define = {
+      ...build.initialOptions.define,
+      'process.env': JSON.stringify({
+        ...env,
+        NODE_ENV: isProdMode ? 'production' : 'development',
+      }),
+    };
   },
 };
 

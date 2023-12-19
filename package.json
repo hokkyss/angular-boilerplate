@@ -88,18 +88,10 @@
     "apps/*",
     "libs/*"
   ],
-  "lint-staged": {
-    "*.{ts,js,tsx,jsx,json}": [
-      "yarn lint"
-    ],
-    "*.{ts,js,html,css}": [
-      "yarn test"
-    ]
-  },
   "scripts": {
-    "lint": "nx run-many --target=lint --all",
-    "test": "nx run-many --target=test --all",
-    "e2e": "nx run-many --target=e2e --all",
+    "lint": "nx affected --target=lint",
+    "test": "nx affected --target=test",
+    "e2e": "nx affected --target=e2e",
     "migrate": "nx migrate latest",
     "migrate:run": "nx migrate --runMigrations --interactive --excludeAppliedMigrations"
   }
