@@ -1,11 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+
+import { HomeViewModel } from './home.view-model';
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule, HomeViewModel],
   selector: 'angular-home',
   standalone: true,
   styleUrl: './home.component.css',
   templateUrl: './home.component.html',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  public constructor(
+    @Inject(HomeViewModel) public readonly vm: HomeViewModel,
+  ) {}
+}
